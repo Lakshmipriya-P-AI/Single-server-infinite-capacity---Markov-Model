@@ -13,16 +13,47 @@ Queuing are the most frequently encountered problems in everyday life. For examp
 This is a queuing model in which the arrival is Marcovian and departure distribution is also Marcovian,number of server is one and size of the queue is also Marcovian,no.of server is one and size of the queue is infinite and service discipline is 1st come 1st serve(FCFS) and the calling source is also finite.
 
 ## Procedure :
-
 ![imAGE](2.png)
-
-
 
 ## Experiment:
 
+![237577908-1b9e4cfa-6e10-4156-bb46-303c7e2bbbdd](https://github.com/Lakshmipriya-P-AI/Single-server-infinite-capacity---Markov-Model/assets/93427923/e99ef456-22ba-492f-b060-817644acc957)
 
-## Program
+![237577988-d9b3785e-bab3-4a0f-bbc1-2b025fac6817](https://github.com/Lakshmipriya-P-AI/Single-server-infinite-capacity---Markov-Model/assets/93427923/363e34ee-0393-4b1c-ba9a-06ac6a2728d4)
 
+## Program:
+```
 
-## Output  and result
+DEVELOPRD BY : LAKSHMI PRIYA P
+REGISTER NO : 212221230053
 
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu=1/(ser_time+Robot_time)
+print("--------------------------------------------------------------")
+print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
+print("--------------------------------------------------------------")
+print("The mean arrival rate per second : %0.2f "%lam)
+print("The mean service rate per second : %0.2f "%mu)
+if (lam <  mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu
+    Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor :  %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor : %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("---------------------------------------------------------------")
+```
+## Output:
+![237578218-bc7d4263-d7fe-4d86-9ae3-9cfa63c68b0f](https://github.com/Lakshmipriya-P-AI/Single-server-infinite-capacity---Markov-Model/assets/93427923/8a2599b5-8843-4bfc-8bf7-fc8791e90029)
+
+## Result:
+The average number of material in the sysytem and in the conveyor and waiting time are successfully found.
